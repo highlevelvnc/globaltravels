@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trabalhar e morar fora | Global Travel Intercâmbios</title>
+  <meta name="description" content="Orientação para quem quer estudar, viver e construir uma nova fase internacional com mais clareza." />
+  <meta property="og:title" content="Trabalhar e morar fora | Global Travel Intercâmbios" />
+  <meta property="og:description" content="Orientação para quem quer estudar, viver e construir uma nova fase internacional com mais clareza." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="favicon_original_mark_v16.png" />
+  <meta name="theme-color" content="#07131F" />
+  <link rel="apple-touch-icon" href="favicon_original_mark_v16.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --bg:#050d16;
+  --bg-soft:#0a1624;
+  --panel:rgba(8,17,28,.72);
+  --panel-2:rgba(11,24,38,.86);
+  --line:rgba(255,255,255,.08);
+  --text:#F8FBFF;
+  --muted:rgba(240,245,251,.76);
+  --muted-2:rgba(240,245,251,.58);
+  --gold:#C79A4A;
+  --gold-soft:#F2D49B;
+  --blue:#13304E;
+  --shadow:0 22px 60px rgba(0,0,0,.28);
+  --radius:28px;
+  --container:min(1180px, calc(100vw - 40px));
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Outfit',system-ui,-apple-system,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(40,95,150,.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(199,154,74,.14), transparent 24%),
+    linear-gradient(180deg,#040b12 0%,#08121d 50%,#091421 100%);
+  overflow-x:hidden;
+}
+body.nav-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+img,video,svg{display:block;max-width:100%}
+.container{width:var(--container);margin:0 auto}
+.section{padding:104px 0;position:relative;z-index:2}
+.section.tight{padding:76px 0}
+.kicker{
+  display:inline-flex;align-items:center;gap:12px;
+  text-transform:uppercase;letter-spacing:.28em;font-size:.72rem;color:rgba(255,255,255,.75)
+}
+.kicker::before{content:"";width:46px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;line-height:.95;letter-spacing:-.03em;margin:0}
+h1{font-size:clamp(3.1rem,7vw,6.6rem);max-width:11ch}
+h2{font-size:clamp(2.4rem,5vw,4.3rem)}
+h3{font-size:clamp(1.7rem,2.7vw,2.1rem)}
+p{margin:0}
+.copy,.lead,.small-copy{color:var(--muted);line-height:1.8}
+.lead{font-size:1.05rem}
+.small-copy{font-size:.95rem}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:54px;padding:0 24px;border-radius:999px;font-weight:600;
+  transition:transform .28s var(--ease), box-shadow .28s var(--ease), background .28s var(--ease), border-color .28s var(--ease);
+  border:1px solid transparent;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#13253A;box-shadow:0 18px 34px rgba(199,154,74,.22)}
+.btn-secondary{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.12);backdrop-filter:blur(12px)}
+.btn-link{padding:0;min-height:auto;border:0;background:none;color:var(--gold-soft)}
+.section-head{display:grid;gap:18px;max-width:760px;margin-bottom:40px}
+.card,.glass,.service,.quote,.contact-box,.info-box,.path-card,.course-card,.destination-card,.faq-item,.mini-card{
+  background:linear-gradient(180deg, rgba(11,22,35,.76), rgba(7,14,24,.92));
+  border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(16px);box-shadow:var(--shadow);
+}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.revealed{opacity:1;transform:none}
+.site-header{position:fixed;inset:0 0 auto;z-index:1000;border-bottom:1px solid transparent;transition:background .35s var(--ease),backdrop-filter .35s var(--ease),border-color .35s var(--ease)}
+.site-header.scrolled{background:rgba(4,10,18,.78);backdrop-filter:blur(18px);border-color:rgba(255,255,255,.08)}
+.nav-shell{width:var(--container);min-height:88px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:0;min-width:0;position:relative;z-index:3}
+.brand-logo{width:clamp(220px,26vw,320px);height:auto;display:block;object-fit:contain;filter:drop-shadow(0 12px 30px rgba(0,0,0,.22))}
+.brand-mark{display:none}
+.brand-word{display:none}
+
+.nav-links{display:flex;align-items:center;gap:26px;color:rgba(255,255,255,.88);font-size:.97rem}
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transform-origin:center;transition:transform .28s var(--ease)}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.burger{display:none;width:48px;height:48px;border-radius:14px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:#fff;font-size:1.2rem}
+.mobile-panel{display:none}
+
+.preloader-logo img{width:100%;height:auto;display:block}
+.preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:linear-gradient(180deg,#030912 0%,#08111a 100%);transition:opacity .75s var(--ease),visibility .75s var(--ease)}
+.preloader.hidden{opacity:0;visibility:hidden}
+.preloader-inner{display:grid;gap:18px;place-items:center;text-align:center;padding:22px}
+.preloader-logo{width:min(560px,90vw);filter:drop-shadow(0 20px 48px rgba(0,0,0,.26));animation:floatLogo 3s ease-in-out infinite}
+.preloader-bar{width:min(220px,72vw);height:3px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;position:relative}
+.preloader-bar::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);transform:translateX(-100%);animation:loading 1.7s linear infinite}
+.preloader small{text-transform:uppercase;letter-spacing:.25em;color:rgba(255,255,255,.7);font-size:.72rem}
+.hero{position:relative;min-height:100vh;display:grid;align-items:end;padding:128px 0 56px;overflow:clip}
+.hero-bg,.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s var(--ease)}
+.hero-slide.active{opacity:1}
+.hero-slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.62) saturate(1.02) contrast(1.03) blur(.2px);transform:scale(1.05)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,10,16,.1) 0%,rgba(5,10,16,.36) 24%,rgba(5,10,16,.84) 100%),radial-gradient(circle at 20% 30%,rgba(199,154,74,.18),transparent 28%),radial-gradient(circle at 80% 20%,rgba(36,89,144,.18),transparent 26%)}
+.hero-inner{position:relative;z-index:2;width:var(--container);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(300px,.72fr);gap:28px;align-items:end}
+.hero-copy{max-width:680px}
+.hero-title{margin-top:18px}
+.hero-lead{margin:20px 0 28px;max-width:60ch;color:rgba(247,251,255,.86)}
+.hero-card{padding:30px;border-radius:30px;align-self:end}
+.hero-card strong{display:block;font-size:2.35rem;font-family:'Cormorant Garamond',Georgia,serif}
+.hero-card p{margin-top:10px;color:var(--muted);line-height:1.7}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+.mini-stats .mini-card{padding:16px;border-radius:20px;background:rgba(255,255,255,.03)}
+.mini-stats strong{display:block;font-size:1.18rem;color:var(--gold-soft);font-family:'Outfit',sans-serif;margin-bottom:6px}
+.mini-stats span{display:block;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.64)}
+.hero-dots{position:relative;z-index:2;display:flex;gap:10px;margin-top:26px}
+.hero-dots button{width:11px;height:11px;border-radius:999px;border:0;background:rgba(255,255,255,.35);padding:0;cursor:pointer;transition:transform .25s var(--ease),background .25s var(--ease)}
+.hero-dots button.active{background:var(--gold-soft);transform:scale(1.25)}
+.intro-grid,.story-grid,.contact-grid,.page-grid,.two-col{display:grid;gap:26px;align-items:stretch}
+.intro-grid{grid-template-columns:1.05fr .95fr}
+.story-grid{grid-template-columns:.94fr 1.06fr;align-items:center}
+.contact-grid{grid-template-columns:1fr .92fr}
+.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}
+.glass,.info-box,.contact-box{padding:34px;border-radius:28px}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.pill{padding:10px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);font-size:.9rem;color:rgba(255,255,255,.84)}
+.grid-3,.services-grid,.destination-grid,.quotes-grid,.path-grid,.course-grid,.steps-grid{display:grid;gap:20px}
+.services-grid,.destination-grid,.quotes-grid,.path-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.course-grid,.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service,.destination-card,.quote,.path-card,.course-card{padding:28px;border-radius:26px}
+.service:hover,.destination-card:hover,.path-card:hover,.course-card:hover{transform:translateY(-5px)}
+.service,.destination-card,.path-card,.course-card{transition:transform .28s var(--ease),border-color .28s var(--ease),background .28s var(--ease)}
+.service:hover,.destination-card:hover,.path-card:hover,.course-card:hover{border-color:rgba(199,154,74,.26);background:linear-gradient(180deg, rgba(15,29,46,.94), rgba(8,15,24,.96))}
+.icon-box{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(180deg,rgba(242,212,155,.18),rgba(199,154,74,.09));border:1px solid rgba(242,212,155,.18);color:var(--gold-soft);font-size:1.25rem;margin-bottom:18px}
+.video-frame{position:relative;min-height:620px;border-radius:32px;overflow:hidden;background:#091521;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+.video-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.76) saturate(1.02)}
+.video-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,10,16,.08),rgba(4,10,16,.78))}
+.video-copy{position:absolute;left:24px;right:24px;bottom:24px;z-index:2;display:grid;gap:8px}
+.video-copy span{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.video-copy strong{font-size:clamp(1.9rem,4vw,3rem);font-family:'Cormorant Garamond',Georgia,serif}
+.feature-list{display:grid;gap:16px;margin-top:22px}
+.feature-item{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.feature-item:last-child{border-bottom:none}
+.badge{width:38px;height:38px;border-radius:999px;display:grid;place-items:center;font-weight:700;background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#13253A}
+.destination-card h3,.path-card h3,.course-card h3,.service h3{margin-bottom:12px}
+.steps-grid .path-card strong,.quote strong,.mini-card strong.label{display:block;font-family:'Outfit',sans-serif;font-size:.84rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold-soft);margin-bottom:12px}
+.quote p{font-size:1.02rem;line-height:1.85;color:var(--muted)}
+.quote span{display:block;margin-top:18px;color:rgba(255,255,255,.62)}
+.faq-list{display:grid;gap:14px}
+.faq-item{border-radius:22px;overflow:hidden}
+.faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px;border:0;background:none;color:#fff;font:inherit;text-align:left;cursor:pointer}
+.faq-btn strong{font-size:1.2rem}
+.faq-content{max-height:0;overflow:hidden;padding:0 28px;transition:max-height .35s var(--ease),padding .35s var(--ease)}
+.faq-item.open .faq-content{max-height:240px;padding:0 28px 24px}
+.contact-list{display:grid;gap:12px;margin-top:20px}
+.contact-list a,.contact-list span{display:flex;align-items:center;gap:10px;padding:15px 18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.footer{padding:28px 0 42px;border-top:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.56)}
+.footer-row{width:var(--container);margin:0 auto;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.page-hero{padding:160px 0 72px;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 12%,rgba(199,154,74,.18),transparent 26%),radial-gradient(circle at 84% 16%,rgba(40,95,150,.18),transparent 24%)}
+.page-hero .container{position:relative;z-index:2}
+.page-tag{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.76)}
+.notice{padding:22px 24px;border-radius:22px;background:rgba(242,212,155,.08);border:1px solid rgba(242,212,155,.18);color:#f7edd6}
+.notice strong{display:block;margin-bottom:8px}
+.list{display:grid;gap:10px;padding-left:18px;color:var(--muted);line-height:1.75}
+
+.floating-wa{
+  position:fixed;right:18px;bottom:18px;z-index:1100;
+  display:inline-flex;align-items:center;gap:10px;
+  min-height:58px;padding:0 18px;border-radius:999px;
+  background:linear-gradient(135deg,#29d366,#1fa855);
+  color:#fff;font-weight:700;box-shadow:0 20px 38px rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.14);
+  transition:transform .28s var(--ease), box-shadow .28s var(--ease), opacity .28s var(--ease);
+}
+.floating-wa:hover{transform:translateY(-3px) scale(1.01);box-shadow:0 24px 44px rgba(0,0,0,.34)}
+.floating-wa .icon{width:24px;height:24px;display:grid;place-items:center;font-size:1.15rem}
+.floating-wa small{display:block;font-size:.72rem;line-height:1;color:rgba(255,255,255,.82);font-weight:600;letter-spacing:.02em}
+.floating-wa strong{display:block;font-size:.92rem;line-height:1.15}
+.hero-offer{
+  display:flex;flex-wrap:wrap;gap:10px;margin:0 0 20px;
+}
+.hero-offer .pill{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.14);
+  color:#fff;
+}
+
+@keyframes loading{100%{transform:translateX(100%)}}
+@keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@media (max-width: 1080px){
+  .hero-inner,.intro-grid,.story-grid,.contact-grid,.two-col{grid-template-columns:1fr}
+  .services-grid,.destination-grid,.quotes-grid,.path-grid,.steps-grid,.course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .video-frame{min-height:460px}
+}
+@media (max-width: 860px){
+  .nav-links,.nav-cta .btn{display:none}
+  .burger{display:grid;place-items:center}
+  .mobile-panel{display:grid;position:fixed;left:20px;right:20px;top:86px;padding:20px;border-radius:24px;background:rgba(5,11,18,.96);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);gap:14px;opacity:0;pointer-events:none;transform:translateY(-12px);transition:.28s var(--ease);z-index:998}
+  body.nav-open .mobile-panel{opacity:1;pointer-events:auto;transform:none}
+  .mobile-panel a{padding:8px 4px;color:#fff}
+}
+@media (max-width: 700px){
+  h1{font-size:clamp(2.8rem,16vw,4.6rem)}
+  h2{font-size:clamp(2.15rem,11vw,3.4rem)}
+  .hero{padding-top:116px;min-height:92vh}
+  .hero-card,.glass,.contact-box,.info-box,.path-card,.service,.course-card,.destination-card,.quote{padding:24px}
+  .mini-stats,.services-grid,.destination-grid,.quotes-grid,.path-grid,.course-grid,.steps-grid,.two-col{grid-template-columns:1fr}
+  .nav-shell{min-height:78px}
+  .brand-logo{width:225px}
+  .floating-wa{right:14px;bottom:14px;padding:0 16px;min-height:54px}
+  .floating-wa small{display:none}
+  .hero-card strong{font-size:2rem}
+}
+</style>
+</head>
+<body>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <div class="preloader-logo"><img src="globaltravel_logo_original_white_v16.png" alt="Global Travel Intercâmbios"></div>
+      <div class="preloader-bar"></div>
+      <small>Carregando sua jornada internacional</small>
+    </div>
+  </div>
+
+  <header class="site-header" id="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Global Travel Intercâmbios"><img class="brand-logo" src="globaltravel_logo_original_white_v16.png" alt="Global Travel Intercâmbios"></a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a class="" href="index.html#servicos">Serviços</a>
+        <a class="" href="index.html#destinos">Destinos</a>
+        <a class="active" href="trabalhar-morar-fora.html">Trabalhar e morar fora</a>
+        <a class="" href="nossos-cursos.html">Nossos cursos</a>
+        <a class="" href="index.html#contato">Contato</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="https://wa.me/351910346159" target="_blank" rel="noopener">WhatsApp</a>
+        <button class="burger" id="burger" aria-label="Abrir menu">☰</button>
+      </div>
+    </div>
+    <div class="mobile-panel">
+      <a href="index.html#servicos">Serviços</a>
+      <a href="index.html#destinos">Destinos</a>
+      <a href="trabalhar-morar-fora.html">Trabalhar e morar fora</a>
+      <a href="nossos-cursos.html">Nossos cursos</a>
+      <a href="index.html#contato">Contato</a>
+    </div>
+  </header>
+
+  
+<main>
+  <section class="page-hero">
+    <div class="container reveal">
+      <span class="page-tag">Trabalhar e morar fora</span>
+      <h1 style="margin-top:18px;max-width:11ch">Uma nova vida começa com direção.</h1>
+      <p class="lead" style="max-width:760px;margin-top:20px">Quer morar ou trabalhar fora? Comece com mais clareza sobre possibilidades, prioridades e próximos passos para construir uma nova fase internacional com mais segurança.</p>
+      <div class="btn-row" style="margin-top:28px">
+        <a class="btn btn-primary" href="https://wa.me/351910346159" target="_blank" rel="noopener">Quero falar sobre meu caso</a>
+        <a class="btn btn-secondary" href="index.html">Voltar ao início</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container intro-grid">
+      <div class="glass reveal">
+        <span class="kicker">Visão geral</span>
+        <h2>Nem todo projeto começa da mesma forma.</h2>
+        <p class="copy" style="margin-top:18px">Algumas pessoas começam estudando, outras viajam antes de tomar a decisão definitiva, e outras precisam primeiro entender documentação, custos, prazo e possibilidades reais. O papel da Global Travel é organizar esse início.</p>
+      </div>
+      <div class="glass reveal">
+        <span class="kicker">Seu momento</span>
+        <div class="feature-list" style="margin-top:0">
+          <div class="feature-item"><span class="badge">1</span><div><h3>Estratégia antes da pressa</h3><p class="small-copy">Você não precisa decidir tudo sozinho logo de cara.</p></div></div>
+          <div class="feature-item"><span class="badge">2</span><div><h3>Mais clareza sobre caminhos</h3><p class="small-copy">Estudo, trabalho, turismo e transição de vida podem se conectar.</p></div></div>
+          <div class="feature-item"><span class="badge">3</span><div><h3>Acompanhamento humano</h3><p class="small-copy">Menos informação solta e mais orientação personalizada.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Possibilidades</span>
+        <h2>Caminhos que podem fazer sentido para quem quer sair do país.</h2>
+      </div>
+      <div class="path-grid">
+        <article class="path-card reveal"><h3>Estudo como porta de entrada</h3><p class="copy">Cursos e intercâmbios podem ajudar a estruturar uma mudança com mais previsibilidade e adaptação.</p></article>
+        <article class="path-card reveal"><h3>Viagem de reconhecimento</h3><p class="copy">Antes de decidir, muita gente prefere sentir o destino, entender rotina, clima e estilo de vida.</p></article>
+        <article class="path-card reveal"><h3>Planejamento migratório</h3><p class="copy">Quando o objetivo já está mais claro, entram organização documental, cronograma e próximos passos.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="kicker">Destinos em destaque</span>
+        <h2>Destinos que costumam fazer parte desse tipo de projeto.</h2>
+      </div>
+      <div class="steps-grid">
+        <article class="path-card reveal"><strong>Portugal</strong><h3>Portugal</h3><p class="copy">Muito procurado por quem busca reorganização de vida, idioma mais próximo e adaptação cultural mais familiar.</p></article>
+        <article class="path-card reveal"><strong>Irlanda</strong><h3>Irlanda</h3><p class="copy">Destino forte para quem quer combinar experiência internacional, formação e novas possibilidades.</p></article>
+        <article class="path-card reveal"><strong>Estados Unidos</strong><h3>Estados Unidos</h3><p class="copy">Presente em planos que envolvem desenvolvimento pessoal, acadêmico ou experiências internacionais mais amplas.</p></article>
+        <article class="path-card reveal"><strong>Atendimento</strong><h3>Atendimento próximo</h3><p class="copy">Um primeiro contato para organizar cenário, prioridades e o melhor ponto de partida para o seu caso.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container contact-grid">
+      <div class="contact-box reveal">
+        <span class="kicker">Processo</span>
+        <h2>Como funciona o atendimento</h2>
+        <div class="feature-list">
+          <div class="feature-item"><span class="badge">1</span><div><h3>Você conta o que está buscando</h3><p class="small-copy">Morar fora, trabalhar fora, explorar possibilidades ou começar a organizar uma nova fase internacional.</p></div></div>
+          <div class="feature-item"><span class="badge">2</span><div><h3>Nós entendemos o cenário</h3><p class="small-copy">Analisamos momento, objetivo e os fatores que mais influenciam esse projeto.</p></div></div>
+          <div class="feature-item"><span class="badge">3</span><div><h3>Estruturamos uma direção inicial</h3><p class="small-copy">Você passa a enxergar melhor prioridades, caminhos e próximos passos.</p></div></div>
+        </div>
+      </div>
+      <div class="contact-box reveal">
+        <h3>Quero entender meu caminho</h3>
+        <p class="copy" style="margin-top:14px">Se você quer conversar sobre morar ou trabalhar fora, a Global Travel pode ajudar a organizar cenário, prioridades e próximos passos com mais clareza desde o primeiro contato.</p>
+        <div class="contact-list">
+          <a href="https://wa.me/351910346159?text=Olá%2C%20quero%20entender%20melhor%20meu%20caminho%20para%20morar%20ou%20trabalhar%20fora." target="_blank" rel="noopener">WhatsApp: +351 910 346 159</a>
+          <a href="mailto:globaltravelintracambios@gmail.com">globaltravelintracambios@gmail.com</a>
+          <a href="https://www.instagram.com/globaltravelintracambios" target="_blank" rel="noopener">Instagram: @globaltravelintracambios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+  <a class="floating-wa" href="https://wa.me/351910346159" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <span class="icon">✆</span>
+    <span><small>Atendimento rápido</small><strong>WhatsApp</strong></span>
+  </a>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <span>© 2026 Global Travel Intercâmbios</span>
+      <span>Planejamento internacional com mais clareza e direção.</span>
+    </div>
+  </footer>
+  
+<script>
+(function(){
+  const preloader = document.getElementById('preloader');
+  const hidePreloader = () => preloader && preloader.classList.add('hidden');
+  window.addEventListener('load', () => setTimeout(hidePreloader, 650));
+  setTimeout(hidePreloader, 2500);
+
+  const header = document.getElementById('site-header');
+  const onScroll = () => {
+    if(!header) return;
+    header.classList.toggle('scrolled', window.scrollY > 18);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const burger = document.getElementById('burger');
+  burger && burger.addEventListener('click', () => document.body.classList.toggle('nav-open'));
+  document.querySelectorAll('.mobile-panel a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('nav-open')));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('revealed'); observer.unobserve(entry.target);} });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-btn');
+    btn && btn.addEventListener('click', () => item.classList.toggle('open'));
+  });
+})();
+</script>
+
+  
+</body>
+</html>
